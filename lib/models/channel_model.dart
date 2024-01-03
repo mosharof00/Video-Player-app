@@ -4,18 +4,19 @@
 
 import 'dart:convert';
 
-Channel channelFromJson(String str) => Channel.fromJson(json.decode(str));
+ChannelModel channelFromJson(String str) =>
+    ChannelModel.fromJson(json.decode(str));
 
-String channelToJson(Channel data) => json.encode(data.toJson());
+String channelToJson(ChannelModel data) => json.encode(data.toJson());
 
-class Channel {
+class ChannelModel {
   Links links;
   int total;
   int page;
   int pageSize;
   List<Result> results;
 
-  Channel({
+  ChannelModel({
     required this.links,
     required this.total,
     required this.page,
@@ -23,7 +24,7 @@ class Channel {
     required this.results,
   });
 
-  factory Channel.fromJson(Map<String, dynamic> json) => Channel(
+  factory ChannelModel.fromJson(Map<String, dynamic> json) => ChannelModel(
         links: Links.fromJson(json["links"]),
         total: json["total"],
         page: json["page"],
