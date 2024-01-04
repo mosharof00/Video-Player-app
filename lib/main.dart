@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:video_palyer_app/Screens/home_hcreen.dart';
+import 'package:video_palyer_app/Screens/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
