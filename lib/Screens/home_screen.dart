@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:video_palyer_app/Screens/video_playScreen.dart';
-
 import 'package:video_palyer_app/Utilities/api_survices.dart';
 import 'package:video_palyer_app/models/channel_model.dart';
 
@@ -46,6 +45,22 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   .data!.results[index].id,
                                               thambnel: snapshot.data!
                                                   .results[index].thumbnail,
+                                              title: snapshot
+                                                  .data!.results[index].title,
+                                              views: snapshot
+                                                  .data!.results[index].viewers,
+                                              dateAndTime: snapshot.data!
+                                                  .results[index].dateAndTime
+                                                  .toString(),
+                                              channelImage: snapshot.data!
+                                                  .results[index].channelImage,
+                                              channelName: snapshot.data!
+                                                  .results[index].channelName
+                                                  .toString(),
+                                              subscribers: snapshot
+                                                  .data!
+                                                  .results[index]
+                                                  .channelSubscriber,
                                             ))),
                                 child: Padding(
                                   padding: const EdgeInsets.only(
@@ -93,7 +108,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                           children: [
                                             CircleAvatar(
                                                 backgroundColor: Colors.white,
-                                                radius: 30.5,
+                                                radius: 25,
                                                 backgroundImage: NetworkImage(
                                                   snapshot.data!.results[index]
                                                       .channelImage,
@@ -178,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       } else {
                         return const Center(
                             child: CircularProgressIndicator(
-                          color: Colors.red,
+                          color: Colors.blue,
                         ));
                       }
                     }))
